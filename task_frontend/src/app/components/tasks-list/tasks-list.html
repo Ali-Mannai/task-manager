@@ -1,0 +1,20 @@
+<div>
+    <div>
+        <button (click)="openAddTaskModal()">Add Task</button>
+    </div>
+    <div>
+        <app-add-task-modal
+            *ngIf="isAddTaskModalOpen"
+            (close)="closeAddTaskModal()"
+            (taskAdded)="onTaskAdded($event)"
+        ></app-add-task-modal>
+    </div>
+    <h2>Tasks List</h2>
+    <ul>
+        <li *ngFor="let task of tasks">
+        <h3>{{ task.title }}</h3>
+        <p>{{ task.description }}</p>
+        <p>Status: {{ task.completed ? 'Completed' : 'Pending' }}</p>
+        </li>
+    </ul>
+</div>

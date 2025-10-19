@@ -1,0 +1,15 @@
+<div>
+    <form>
+        <label for="title">Title:</label>
+        <input id="title" [(ngModel)]="taskTitle" name="title" />
+        <br />
+        <label for="description">Description:</label>
+        <textarea id="description" [(ngModel)]="taskDescription" name="description"></textarea>
+        <br />
+        <label for="completed">Completed:</label>
+        <input id="completed" type="checkbox" [(ngModel)]="taskCompleted" name="completed" />
+        <br />
+    <button type="button" (click)="addTask()">Add Task</button>
+    <button type="button" (click)="emitClose()">Cancel</button>
+    </form>
+</div>
